@@ -7,9 +7,11 @@ const CrudTable = ({ data, setDataToEdit, deleteData }) => {
       <h3>Tabla de Datos</h3>
       <table>
         <thead>
-          <th>Nombre</th>
-          <th>Constelacion</th>
-          <th>Acciones</th>
+          <tr>
+            <th>Nombre</th>
+            <th>Constelacion</th>
+            <th>Acciones</th>
+          </tr>
         </thead>
         <tbody>
           {data.length === 0 ? (
