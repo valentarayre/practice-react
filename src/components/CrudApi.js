@@ -18,8 +18,7 @@ const CrudApi = () => {
     setLoading(true);
     helpHttp()
       .get(url)
-      .then((res) => {
-        console.log();
+      .then((res) => {        
         if (!res.err && res.length !== undefined) {
           setDb(res);
           setError(null);

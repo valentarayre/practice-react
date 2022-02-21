@@ -17,8 +17,8 @@ export const helpHttp = () => {
     if (!options.body) delete options.body;
 
     setTimeout(() => controller.abort(), 3000);
-
-    return fetch(endPoint, options)
+    
+    return fetch(noSpaceEndPoint(endPoint), options)
       .then((res) =>
         res.ok
           ? res.json()
@@ -30,6 +30,8 @@ export const helpHttp = () => {
       )
       .catch((err) => err);
   };
+
+  const noSpaceEndPoint = (data) => data.trim().replace(' ','%20')
 
   const get = (url, options = {}) => customFetch(url, options);
 
